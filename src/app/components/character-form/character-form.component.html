@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-sm-4 offset-md-4">
     <div class="card card-body">
-      <form (submit)="edit ? updateCharacter() :submitCharacter()">
+      <form (submit)="edit ? updateCharacter() : submitCharacter()">
         <div class="form-group">
           <input type="text" name="name" [(ngModel)]="character.name" class="form-control" placeholder="Chacter Name"
             autofocus>

@@ -34,17 +34,17 @@ export class CharacterFormComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     const params = this.activatedRoute.snapshot.params;
     //console.warn(params);
-    if(params) {
+    if(params.id) {
       this.characterService.getCharacter(params.id)
         .subscribe(
           res => {
-            console.log(res);
+            //console.warn(res);
             //Lleno las propiedades con la nueva respuesta
             this.character = res;
-            this.character.createdAt = this.pipe.transform(this.character.createdAt, 'short');
+            //this.character.createdAt = this.pipe.transform(this.character.createdAt, 'short');
             //console.warn('Fecha', this.character.createdAt);
             this.edit = true;
           }
@@ -53,7 +53,7 @@ export class CharacterFormComponent implements OnInit {
   }
 
   submitCharacter() {
-    console.log(this.character);
+    //console.log(this.character);
     //Save Events
     this.characterService.createCharacter(this.character)
       .subscribe(
@@ -76,7 +76,7 @@ export class CharacterFormComponent implements OnInit {
           this.router.navigate(['/character']);
         },
         err => console.error(err),
-      )
+      );
       
   }
 

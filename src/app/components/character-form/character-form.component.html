@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-sm-4 offset-md-4">
+    <div class="card card-body">
+      <form (submit)="edit ? updateCharacter() :submitCharacter()">
+        <div class="form-group">
+          <input type="text" name="name" [(ngModel)]="character.name" class="form-control" placeholder="Chacter Name"
+            autofocus>
+        </div>
+        <div class="form-group">
+          <label>Character roles</label>
+          <select class="form-control" name="role" [(ngModel)]="character.role" placeholder="Chacter Name">
+            <option value="Achiever">Achiever</option>
+            <option value="Brawler">Brawler</option>
+            <option value="Bruiser">Bruiser</option>
+            <option value="Carry">Carry</option>
+            <option value="Healer">Healer</option>
+            <option value="Support">Support</option>
+            <option value="Tanque">Tanque</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" name="description" [(ngModel)]="character.description" placeholder="Character description" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="number" name="age" [(ngModel)]="character.age" class="form-control" placeholder="Chacter Age"
+            autofocus>
+        </div>
+        <div class="form-group">
+          <label>Character personalities</label>
+          <select class="form-control" name="personality" [(ngModel)]="character.personality">
+            <option value="Introvert-thinking">Introvert-thinking</option>
+            <option value="Sentimental-introvert">Sentimental-introvert</option>
+            <option value="Feeling-introvert">Feeling-introvert</option>
+            <option value="Intuitive-introvert">Intuitive-introvert</option>
+            <option value="Thinking-extrovert">Thinking-extrovert</option>
+            <option value="Sentimental-extrovert">Sentimental-extrovert</option>
+            <option value="Feeling-extrovert">Feeling-extrovert</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" name="hability" [(ngModel)]="character.hability" placeholder="Character habilities" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="text" name="avatarPath" [(ngModel)]="character.avatarPath" class="form-control"
+            placeholder="Character Image URL" autofocus>
+        </div>
+        <div class="form-group">
+          <input type="text" name="creatorName" [(ngModel)]="character.creatorName" class="form-control" placeholder="Creator Name"
+            autofocus>
+        </div>
+        <button class="btn btn-primary btn-block">
+          Save character
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>
